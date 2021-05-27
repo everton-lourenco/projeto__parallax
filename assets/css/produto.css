@@ -1,0 +1,131 @@
+.produto {
+    display: flex;
+
+    height: calc(100vh - 4.25rem);
+
+    overflow: hidden;/*para a imagem não ultrapassar os limites do carrosel (no caso esconder isso*/
+}
+
+.produto__foto {/*a foto tá ocupando 100% no caso, por conta do height do .produto*/
+    width: 40%;
+    height: 100%;
+
+    background-image: url(../img/produto-capa.png);
+    /*background-attachment: fixed;*/
+    background-size: 129% 95%;/*cover*/
+    background-position: center;
+    background-repeat: no-repeat;
+    /*esse é o efeito parallax, a imagem está fixa na tela*/
+
+    transform: translateZ(-1px) translate(-75%, 25%) scale(2.6);
+
+    z-index: -1;
+}
+
+.produto__descricao {
+    width: 60%; /*porque a imagem está com 40%*/
+
+    padding-top: 3rem;
+
+    box-sizing: border-box;/*pra não alterar o tamanho total do elemento (no caso 60%), mesmo colocando padding.*/
+
+    color: var(--cinza);
+
+    background-color: var(--branco);
+}
+
+.produto__marca {
+    text-transform: uppercase;
+    font-size: 11.5rem;
+    font-weight: 800;
+    color: var(--rosa-claro);
+    letter-spacing: 0.5rem;
+    line-height: 9rem;
+}
+
+.produto__divisao {
+    padding-left: 1rem;
+    
+    position: relative;
+}
+
+.produto__preco {
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: 0.125rem;
+
+    margin-bottom: 2.5rem;
+}
+
+.produto__nome {
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1.875rem;
+    letter-spacing: 0.125rem;
+
+    width: 31.875rem;/*pro texto quebrar de linha, no caso o nome do produto*/
+
+    margin-bottom: 0.875rem;
+}
+
+.produto__texto {
+    width: 31rem;
+
+    letter-spacing: 0.125rem;
+    line-height: 1.25rem;
+
+    margin-bottom: 1rem;
+    text-align: justify;
+
+}
+
+.produto__comprar {
+    position: absolute;
+    bottom: 0;
+    right: 2rem;/*posicionando o botão*/
+
+    border: none;
+
+    color: var(--branco);
+    font-weight: 900;
+    letter-spacing: 0.25rem;
+    font-family: inherit;/*herdando a fonte do pai*/
+    text-transform: uppercase;
+
+    border-radius: 35px;
+
+    background-color: var(--laranja);
+
+    min-width: 10rem;/*tamanho minimo do botão*/
+
+    padding: 1.25rem 1rem;
+
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 568px) {
+    .produto__foto {
+        width: 0%;
+        background-image: none;
+    }
+    .produto__descricao {
+        width: 100vh; /*porque a imagem está com 40%*/
+    
+        padding-top: 3rem;
+    
+        box-sizing: border-box;/*pra não alterar o tamanho total do elemento (no caso 60%), mesmo colocando padding.*/
+    
+        color: var(--cinza);
+    }
+    .produto__marca {
+        padding-top: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--rosa-claro);
+        letter-spacing: 0.5rem;
+        line-height: 9rem;
+    }
+
+}
